@@ -1,5 +1,5 @@
 import express from "express";
-import cars from "./public/routes/cars.js"
+import cars from "./routes/cars.js"
 
 const app = express();
 app.use(express.json());
