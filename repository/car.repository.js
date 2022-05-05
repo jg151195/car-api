@@ -17,7 +17,6 @@ const repository = {
                 maisModelos.push(element.brand);
             }
         });
-        maisModelos.sort((a, b) => a.localeCompare(b));
         return maisModelos;
     },
 
@@ -57,7 +56,7 @@ const repository = {
         const data = JSON.parse(await fs.readFile("./public/car-list.json"));
         const array = []
         data.sort((a, b) => {
-            return parseInt(b.models.length) - parseInt(a.models.length) || a.brand.localeCompare(b.brand);
+            return b.models.length - a.models.length || a.brand.localeCompare(b.brand);
         })
         for (let i = 0; i < param; i++) {
             const name = data[i].brand;
